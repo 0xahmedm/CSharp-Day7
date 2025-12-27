@@ -69,6 +69,5 @@ class Program
         board.Resign();
 
         Console.WriteLine("\n=== TEST COMPLETED ===");
-        Console.ReadLine();
     }
 }
