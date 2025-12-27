@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http.Headers;
 
 namespace Day7
 {
@@ -7,7 +8,20 @@ namespace Day7
         public int AchievedTarget { get; set; }
         public bool CheckTarget(int Quota)
         {
-            throw new NotImplementedException();
+            if (AchievedTarget < Quota)
+            {
+                OnEmployeeLayOff(new EmployeeLayOffEventArgs
+                {
+                    Cause = LayOffCause.FailTarget
+                });
+                return false;
+            }
+            return true;
+        }
+
+        public override bool RequestVacation(DateTime From, DateTime To)
+        {
+            return true;
         }
     }
 }

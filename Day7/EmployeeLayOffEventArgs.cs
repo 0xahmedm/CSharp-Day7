@@ -2,10 +2,14 @@
 
 namespace Day7
 {
-    enum LayOffCause
-    { 
-        ///Implement it YourSelf 
+    public enum LayOffCause
+    {
+        VacationStock,
+        AgeOver60,
+        FailTarget,
+        Resigned
     }
+
     public class EmployeeLayOffEventArgs
     {
         public LayOffCause Cause { get; set; }

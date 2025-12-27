@@ -6,7 +6,20 @@ namespace Day7
     {
         public void Resign()
         {
-            throw new NotImplementedException();
+            OnEmployeeLayOff(new EmployeeLayOffEventArgs
+            {
+                Cause = LayOffCause.Resigned
+            });
+        }
+
+        public override bool RequestVacation(DateTime From, DateTime To)
+        {
+            return true;
+        }
+
+        public override void EndOfYearOperation()
+        {
+            // Do nothing
         }
     }
 }
